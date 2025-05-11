@@ -1,4 +1,3 @@
-// User interface based on the JSONPlaceholder API
 export interface User {
   id: number;
   name: string;
@@ -23,7 +22,7 @@ export interface User {
   };
 }
 
-// New User form data
+
 export interface NewUser {
   name: string;
   email: string;
@@ -31,14 +30,14 @@ export interface NewUser {
   role: UserRole;
 }
 
-// User roles enum
+
 export enum UserRole {
   ADMIN = 'Admin',
   EDITOR = 'Editor',
   VIEWER = 'Viewer'
 }
 
-// User context state
+
 export interface UserState {
   users: User[];
   newUsers: NewUser[];
@@ -46,7 +45,7 @@ export interface UserState {
   error: string | null;
 }
 
-// User action types
+
 export enum UserActionType {
   FETCH_USERS_START = 'FETCH_USERS_START',
   FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS',
@@ -54,7 +53,7 @@ export enum UserActionType {
   ADD_NEW_USER = 'ADD_NEW_USER'
 }
 
-// User actions
+
 export type UserAction =
   | { type: UserActionType.FETCH_USERS_START }
   | { type: UserActionType.FETCH_USERS_SUCCESS; payload: User[] }

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 import { User, NewUser, UserState, UserAction, UserActionType } from '../types/types';
 
-// Initial state
+
 const initialState: UserState = {
   users: [],
   newUsers: [],
@@ -9,7 +9,7 @@ const initialState: UserState = {
   error: null
 };
 
-// Create the context
+
 const UserContext = createContext<{
   state: UserState;
   dispatch: React.Dispatch<UserAction>;
@@ -18,7 +18,7 @@ const UserContext = createContext<{
   dispatch: () => null
 });
 
-// Reducer function
+
 const userReducer = (state: UserState, action: UserAction): UserState => {
   switch (action.type) {
     case UserActionType.FETCH_USERS_START:
@@ -49,7 +49,7 @@ const userReducer = (state: UserState, action: UserAction): UserState => {
   }
 };
 
-// Provider component
+
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
 
@@ -60,7 +60,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   );
 };
 
-// Custom hook to use the context
+
 export const useUserContext = () => {
   const context = useContext(UserContext);
   if (context === undefined) {

@@ -15,7 +15,6 @@ const AddUserPage: React.FC = () => {
       payload: userData
     });
     
-    // Show success message and redirect after a brief delay
     setSuccess(true);
     setTimeout(() => {
       navigate('/');
